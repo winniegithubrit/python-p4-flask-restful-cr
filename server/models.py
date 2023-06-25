@@ -11,6 +11,8 @@ class Newsletter(db.Model, SerializerMixin):
     body = db.Column(db.String)
     published_at = db.Column(db.DateTime, server_default=db.func.now())
     edited_at = db.Column(db.DateTime, onupdate=db.func.now())
+    
+
 
     def __repr__(self):
         return f'<Newsletter {self.title}, published at {self.published_at}.>'
